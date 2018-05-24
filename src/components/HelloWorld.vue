@@ -84,12 +84,22 @@
 </template>
 
 <script>
+import {getUserInfo}  from '../../api'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  created(){
+    // debugger
+    // getUserInfo().then(data=>{
+    //   console.log(data)
+    // }).catch(error=>{
+    //   debugger;
+    //   console.log(error)
+    // })
   }
 }
 </script>
