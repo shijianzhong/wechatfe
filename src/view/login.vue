@@ -10,22 +10,19 @@ export default {
   data() {
     return {
       imgurl:"",
-      loginurl
     };
   },
-  created() {
-    getLoginUrl().then(x => {
-      console.log(x);
-    });
-  },
   mounted() {
-    QRCode.toDataURL("I am a pony!")
+    getLoginUrl().then(x => {
+      console.log(x.loginUrl)
+      QRCode.toDataURL(x.loginUrl)
       .then(url => {
         this.imgurl = url;
       })
       .catch(err => {
         console.error(err);
       });
+    });
   }
 };
 </script>
