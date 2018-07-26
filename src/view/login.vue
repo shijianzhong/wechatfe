@@ -14,13 +14,11 @@ export default {
   },
   mounted() {
     getLoginUrl().then(x => {
-      console.log(x.loginUrl)
       QRCode.toDataURL(x.loginUrl)
       .then(url => {
         this.imgurl = url;
       })
       .catch(err => {
-        console.error(err);
       });
     });
   }
